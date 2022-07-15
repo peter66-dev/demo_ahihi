@@ -1,0 +1,37 @@
+﻿@page
+@model MyWeb.Pages.Users.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>AccountUser</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AccountUser.UserPassword)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AccountUser.UserPassword)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AccountUser.UserFullName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AccountUser.UserFullName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AccountUser.UserRole)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AccountUser.UserRole)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.AccountUser.UserId">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

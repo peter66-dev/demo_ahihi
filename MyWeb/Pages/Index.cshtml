@@ -1,0 +1,27 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="container-fluid w-50 my-login-container">
+    <h2 class="text-center font-weight-bold" style="font-size: 38px; margin-bottom: 20px">
+        Login here
+    </h2>
+    @if (ViewData["LoginMessage"] != null)
+    {
+        <p class="text-danger text-center font-weight-bold">@ViewData["LoginMessage"]</p>
+    }
+
+    <form method="post">
+        <div class="form-group">
+            <label class="mb-2" for="exampleInputEmail1">User id</label>
+            <input type="text" class="form-control" asp-for="@Model.UserLogin.UserId">
+        </div>
+        <div class="form-group">
+            <label class="mb-2" for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" asp-for="@Model.UserLogin.Password">
+        </div>
+        <button type="submit" class="btn btn-primary w-100 p-2">Login</button>
+    </form>
+</div>
